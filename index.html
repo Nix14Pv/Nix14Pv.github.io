@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Te Amo Cuchi</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #f7f0ff; /* fondo lila suave */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #4b0082; /* morado oscuro */
+  }
+
+  .heart {
+    position: relative;
+    width: 120px;  /* tamaño base más pequeño */
+    height: 110px;
+    background-color: #800080;
+    margin: 20px auto;
+    transform: rotate(-45deg);
+    cursor: default;
+    z-index: 0;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 110px;
+    background-color: #800080;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .heart::before {
+    top: -55px;
+    left: 0;
+  }
+  .heart::after {
+    top: 0;
+    right: -55px;
+  }
+  
+  .heart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+
+  .message {
+    max-width: 400px;
+    margin: 20px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #3a0066;
+  }
+
+  .question {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+
+  button#yes {
+    background-color: #8a2be2;
+    color: white;
+  }
+  button#yes:hover {
+    background-color: #7a1bd9;
+  }
+
+  button#no {
+    background-color: #cccccc;
+    color: #333;
+  }
+  button#no:hover {
+    background-color: #b3b3b3;
+  }
+
+  .response {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4b0082;
+  }
+
+  .response img {
+    margin-top: 15px;
+    max-width: 200px;
+    border-radius: 15px;
+  }
+</style>
+</head>
+<body>
+
+<div class="heart">
+  <div class="heart-text">Te amo cuchi</div>
+</div>
+
+<div class="message">
+  ❤️Eres la mujer que ilumina mis días, eres el motivo por el cual sonrio, tu me encantas demasiado y eres lo mas presiado en mi corazón. Contigo cada instante es maravilloso y cada momento un sueño hecho realidad. Me gustas mucho, eres el amor de mi vida. ❤️
+</div>
+
+<div class="question">¿Quieres casarte conmigo?</div>
+
+<div class="buttons">
+  <button id="yes">Sí</button>
+  <button id="no">No</button>
+</div>
+
+<div class="response" id="response"></div>
+
+<script>
+  const responseDiv = document.getElementById('response');
+
+  document.getElementById('yes').onclick = () => {
+    responseDiv.innerHTML = `
+      Me encantas, casémonos
+      <br>
+      <img src="https://i.pinimg.com/736x/ef/ef/65/efef65dd0c6deb5657adc1be9ba8eb16.jpg" alt="Corazón feliz" />
+    `;
+  };
+
+  document.getElementById('no').onclick = () => {
+    responseDiv.innerHTML = `
+      Ahora le digo a tu mamá
+      <br>
+      <img src="https://w7.pngwing.com/pngs/743/1012/png-transparent-crying-man-cry-heartbreak-uncomfortable.png" alt="Carita sorprendida" />
+    `;
+  };
+</script>
+
+</body>
+</html>
